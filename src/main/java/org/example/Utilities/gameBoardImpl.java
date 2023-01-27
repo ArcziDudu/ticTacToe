@@ -1,7 +1,8 @@
 package org.example.Utilities;
 
 public class gameBoardImpl implements gameBoard{
-    public static String[][] gameBoardArray = {{" ", "|", " ", "|", " "},
+    public static   String[][] gameBoardArray = {
+            {" ", "|", " ", "|", " "},
             {"-", "+", "-", "+", "-"},
             {" ", "|", " ", "|", " "},
             {"-", "+", "-", "+", "-"},
@@ -16,8 +17,13 @@ public class gameBoardImpl implements gameBoard{
             System.out.println();
         }
     }
-    @Override
-    public void resetGameBoard() {
+
+    public String[][] getGameBoardArray() {
+        return gameBoardArray;
+    }
+
+
+    public static void resetGameBoard() {
         gameBoardArray = new String[][]{{" ", "|", " ", "|", " "},
                 {"-", "+", "-", "+", "-"},
                 {" ", "|", " ", "|", " "},

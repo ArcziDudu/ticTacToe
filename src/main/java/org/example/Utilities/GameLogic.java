@@ -1,13 +1,15 @@
 package org.example.Utilities;
 
+import org.example.constants.playerGenerator;
+
 import java.util.Scanner;
 
 public class GameLogic {
     private static GameLogic instance;
+    private final playGame playGame = new playGameImpl();
 
     private GameLogic() {
     }
-
     public static GameLogic getInstance() {
         if (instance == null) {
             instance = new GameLogic();
@@ -27,12 +29,17 @@ public class GameLogic {
             }
         } while (!symbolChosenByHuman.equals("X") && !symbolChosenByHuman.equals("O"));
         checkingIfSymbolHasBeenSelectedThenStartGame(symbolChosenByHuman);
+
+        playGame.playGame();
     }
 
 
     private void checkingIfSymbolHasBeenSelectedThenStartGame(String symbolChosenByHuman) {
         if (symbolChosenByHuman.equals("X") || symbolChosenByHuman.equals("O")) {
             String symbolChosenByComputer = symbolChosenByHuman.equals("X") ? "O" : "X";
+
+            playerGenerator.humanPlayer.setSymbol(symbolChosenByHuman);
+            playerGenerator.computerPlayer.setSymbol(symbolChosenByComputer);
 
             System.out.println("Human symbol: " + symbolChosenByHuman + " Computer symbol: " + symbolChosenByComputer);
         }
