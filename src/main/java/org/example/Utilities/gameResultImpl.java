@@ -47,6 +47,7 @@ public class gameResultImpl implements gameResult{
                 scoreboard.saveResult(computerWin,"Computer");
                 return true;
             }
+
         }
         return false;
     }

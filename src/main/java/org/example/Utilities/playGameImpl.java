@@ -7,10 +7,11 @@ public class playGameImpl implements playGame {
     gameBoard gameBoard = new gameBoardImpl();
     gameResult gameResult = new gameResultImpl();
     private final afterEndRound afterEndRound = new afterEndRoundImpl();
-    scoreboard scoreboard = new scoreboardImpl();
+
 
     @Override
     public void playGame() {
+        positionsValidator.resetPositionCheckerBoard();
         Scanner inputScanner = new Scanner(System.in);
         int positionChosenByHuman;
         do {
@@ -27,7 +28,8 @@ public class playGameImpl implements playGame {
             gameBoard.printBoard();
             boolean b = gameResult.checkForWin();
            while (b){
-              afterEndRound.afterRound(inputScanner, scoreboard);
+
+              afterEndRound.afterRound(inputScanner);
            }
         } while (true);
     }

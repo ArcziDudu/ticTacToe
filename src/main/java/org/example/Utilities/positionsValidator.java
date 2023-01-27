@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public final class positionsValidator {
-     static boolean[] positionCheckerBoard = new boolean[9];
+     static   boolean[] positionCheckerBoard = new boolean[9];
     static void resetPositionCheckerBoard() {
         Arrays.fill(positionCheckerBoard, false);
     }
@@ -20,6 +20,7 @@ public final class positionsValidator {
     }
 
      static boolean checkingIfTheSameFieldsAreNotSelected(int positionChosenByHuman) {
+
             int positionChosenByCpu;
             if (tryToSelectTheSameField(positionChosenByHuman)) {
                 return true;
@@ -37,6 +38,7 @@ public final class positionsValidator {
 
         }
         private static boolean tryToSelectTheSameField ( int humanPosition){
+
             if (positionsValidator.positionCheckerBoard[humanPosition - 1]) {
                 System.out.println("This position is already taken, please choose another one.");
                 return true;

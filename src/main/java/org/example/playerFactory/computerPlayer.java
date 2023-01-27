@@ -4,6 +4,9 @@ import org.example.Utilities.gameBoard;
 import org.example.Utilities.gameBoardImpl;
 import org.example.constants.scores;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class computerPlayer implements player{
     private String symbol;
 
